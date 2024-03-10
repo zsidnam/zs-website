@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 
+import { ThemeSwitcher } from '@/app/components/ThemeSwitcher';
 import { inter } from '@/app/fonts';
+import { ThemeStoreProvider } from '@/app/store/ThemeStoreContext';
 
 import './globals.css';
 
@@ -16,7 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ThemeStoreProvider>
+          {children}
+          <ThemeSwitcher className="absolute top-2 right-2" />
+        </ThemeStoreProvider>
+      </body>
     </html>
   );
 }
