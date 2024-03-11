@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { ThemeSwitcher } from '@/app/components/ThemeSwitcher';
 import { inter } from '@/app/fonts';
 import { ThemeStoreProvider } from '@/app/store/ThemeStoreContext';
+import setColorThemeScript from '@/app/theme/setColorThemeScript';
 
 import './globals.css';
 
@@ -17,8 +18,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
+        {/* Blocking script to set color mode preference before content is shown */}
+        <script dangerouslySetInnerHTML={{ __html: setColorThemeScript }} />
+
         <ThemeStoreProvider>
           {children}
           <ThemeSwitcher className="absolute top-2 right-2" />

@@ -1,7 +1,9 @@
 import { createStore } from 'zustand/vanilla';
 
+export type Theme = 'light' | 'dark';
+
 export interface ThemeState {
-  theme: 'light' | 'dark';
+  theme: Theme;
 }
 
 export interface ThemeActions {
@@ -12,9 +14,9 @@ export interface ThemeActions {
 
 export type ThemeStore = ThemeState & ThemeActions;
 
-export function initThemeStore(): ThemeState {
+export function initThemeStore(theme: Theme = 'light'): ThemeState {
   return {
-    theme: 'light',
+    theme,
   };
 }
 
@@ -32,6 +34,7 @@ export const createThemeStore = (initState: ThemeState = defaultInitState) => {
           const nextTheme = prev.theme === 'light' ? 'dark' : 'light';
 
           document.documentElement.setAttribute('data-theme', nextTheme);
+          localStorage.setItem('theme', nextTheme);
 
           return { theme: nextTheme };
         }),

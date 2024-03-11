@@ -1,9 +1,10 @@
 'use client';
 
-import { createContext, useContext, useRef } from 'react';
+import { createContext, useContext, useEffect, useRef } from 'react';
 import { StoreApi, useStore } from 'zustand';
 
 import {
+  Theme,
   ThemeStore,
   createThemeStore,
   initThemeStore,
@@ -20,6 +21,15 @@ export function ThemeStoreProvider({ children }: ParentProps) {
   if (!storeRef.current) {
     storeRef.current = createThemeStore(initThemeStore());
   }
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') ?? undefined;
+
+    console.log('savedTheme', savedTheme);
+    if (savedTheme) {
+      storeRef.current!.setState({ theme: savedTheme as Theme | undefined });
+    }
+  }, []);
 
   return (
     <ThemeStoreContext.Provider value={storeRef.current}>
