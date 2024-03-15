@@ -8,8 +8,8 @@ import {
   ThemeStore,
   createThemeStore,
   initThemeStore,
-} from '@/app/store/createThemeStore';
-import { ParentProps } from '@/app/util/types';
+} from '@/app/theme/createThemeStore';
+import { ParentProps } from '@/app/util/clientTypes';
 
 const ThemeStoreContext = createContext<StoreApi<ThemeStore>>(null!);
 
@@ -23,11 +23,13 @@ export function ThemeStoreProvider({ children }: ParentProps) {
   }
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') ?? undefined;
+    // By the time the component is mounted, the `setColorThemeScript` has already
+    // run and set a theme value on the root element.
+    const currentTheme = document.documentElement.getAttribute('data-theme');
 
-    console.log('savedTheme', savedTheme);
-    if (savedTheme) {
-      storeRef.current!.setState({ theme: savedTheme as Theme | undefined });
+    if (currentTheme) {
+      // Make sure the store is in sync with the current theme value.
+      storeRef.current!.setState({ theme: currentTheme as Theme });
     }
   }, []);
 

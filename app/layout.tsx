@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
-import { ThemeSwitcher } from '@/app/components/ThemeSwitcher';
 import { inter } from '@/app/fonts';
-import { ThemeStoreProvider } from '@/app/store/ThemeStoreContext';
 import setColorThemeScript from '@/app/theme/setColorThemeScript';
+import { ThemeStoreProvider } from '@/app/theme/ThemeStoreContext';
+import { ThemeSwitcher } from '@/app/theme/ThemeSwitcher';
 
 import './globals.css';
 

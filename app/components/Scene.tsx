@@ -2,7 +2,7 @@
 
 import { Canvas } from '@react-three/fiber';
 
-import { useThemeStore } from '@/app/store/ThemeStoreContext';
+import { useThemeStore } from '@/app/theme/ThemeStoreContext';
 
 export function Scene() {
   const theme = useThemeStore((state) => state.theme);
