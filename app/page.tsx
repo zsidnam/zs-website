@@ -1,4 +1,4 @@
-import { Scene } from '@/app/components/Scene';
+import { Scene } from '@/_components/Scene';
 
 export default function Home() {
   return (

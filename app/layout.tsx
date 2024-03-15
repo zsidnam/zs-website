@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 
-import { inter } from '@/app/fonts';
-import setColorThemeScript from '@/app/theme/setColorThemeScript';
-import { ThemeStoreProvider } from '@/app/theme/ThemeStoreContext';
-import { ThemeSwitcher } from '@/app/theme/ThemeSwitcher';
+import { inter } from '@/_styles/fonts';
+import setColorThemeScript from '@/_theme/setColorThemeScript';
+import { ThemeStoreProvider } from '@/_theme/ThemeStoreContext';
+import { ThemeSwitcher } from '@/_theme/ThemeSwitcher';
 
-import './globals.css';
+import '@/_styles/globals.css';
 
 export const metadata: Metadata = {
   title: 'Create Next App',

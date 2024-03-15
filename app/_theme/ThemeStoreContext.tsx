@@ -8,8 +8,8 @@ import {
   ThemeStore,
   createThemeStore,
   initThemeStore,
-} from '@/app/theme/createThemeStore';
-import { ParentProps } from '@/app/util/clientTypes';
+} from '@/_theme/createThemeStore';
+import { ParentProps } from '@/_types/client';
 
 const ThemeStoreContext = createContext<StoreApi<ThemeStore>>(null!);
 
