@@ -7,6 +7,7 @@ import setColorThemeScript from '@/_theme/setColorThemeScript';
 import { ThemeStoreProvider } from '@/_theme/ThemeStoreContext';
 
 import '@/_styles/globals.css';
+import '@/_theme/theme.css';
 
 export const metadata: Metadata = {
   title: 'Zac Sidnam',

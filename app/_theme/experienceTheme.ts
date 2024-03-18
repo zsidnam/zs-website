@@ -7,11 +7,11 @@ export interface ExperienceColors {
 
 export const EXPERIENCE_THEME_COLORS = {
   light: {
-    foreground: '#ff0000',
+    foreground: '#128A63',
     background: '#ff0000',
   },
   dark: {
-    foreground: '#0000ff',
+    foreground: '#27FFC9',
     background: '#0000ff',
   },
 } satisfies Record<Theme, ExperienceColors>;

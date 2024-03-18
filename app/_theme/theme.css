@@ -1,0 +1,11 @@
+:root {
+  /* Light Theme (Default) */
+  --color-foreground: rgb(0, 0, 0);
+  --color-background: rgb(233, 255, 250);
+
+  /* Dark Theme */
+  &[data-theme='dark'] {
+    --color-foreground: rgb(255, 255, 255);
+    --color-background: rgb(22, 26, 31);
+  }
+}

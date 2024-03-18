@@ -3,7 +3,7 @@
 import {
   EXPERIENCE_THEME_COLORS,
   ExperienceColors,
-} from '@/_styles/experience';
+} from '@/_theme/experienceTheme';
 import { useThemeStore } from '@/_theme/ThemeStoreContext';
 
 export function useExperienceThemeColors(): ExperienceColors {

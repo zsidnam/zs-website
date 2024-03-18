@@ -22,5 +22,5 @@ export function Performance() {
 
   if (!showPerf) return null;
 
-  return <Perf position="top-left" logsPerSecond={3} />;
+  return <Perf position="top-left" logsPerSecond={3} showGraph={false} />;
 }
